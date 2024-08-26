@@ -16,7 +16,6 @@
     if (isReducedMotion) {
       return;
     }
-
     
     try {
       const searchParams = location.search
@@ -56,6 +55,8 @@
     } catch (e) {;
       return;
     }
+    if (!nekoSites.includes(newLocation.host) || newLocation.pathname != "/")
+      return;
     newLocation.searchParams.append("catx", Math.floor(nekoPosX));
     newLocation.searchParams.append("caty", Math.floor(nekoPosY));
     newLocation.searchParams.append("catdx", Math.floor(mousePosX));
@@ -63,7 +64,7 @@
     event.preventDefault();
     window.location.href = newLocation.toString();
   }
-  document.addEventListener("click", onClick);
+  //document.addEventListener("click", onClick);
   
     let frameCount = 0;
     let idleTime = 0;

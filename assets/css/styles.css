@@ -332,7 +332,24 @@ body.light-mode .social-name a {
     text-decoration: underline;
 }
 
+
 @media (min-width: 768px) {
+
+    .retro-info {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 125px;
+        scrollbar-color: #d3d3d3 #222;
+        gap: 10px;
+    }
+    
+    .retro-info a {
+        flex: 0 0 auto;
+    }
+
+
     .social-info {
         height: 120px;
         overflow-y: auto;
@@ -374,6 +391,22 @@ body.light-mode .social-name a {
 }
 
 @media (max-width: 767px) {
+
+    .retro-info {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 290px;
+        scrollbar-color: #d3d3d3 #222;
+        gap: 10px;
+    }
+    
+    .retro-info a {
+        flex: 0 0 auto;
+    }
+
+
     .container {
         height: 400px;
     }
