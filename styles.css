@@ -71,22 +71,25 @@ body {
     right: 10px;
 }
 
-.navbar::-webkit-scrollbar {
-    height: 8px;
+/* Style for Webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    height: 8px; /* Adjust height for horizontal scrollbars */
+    width: 8px;  /* Adjust width for vertical scrollbars */
 }
 
-.navbar::-webkit-scrollbar-thumb {
-    background-color: #d3d3d3;
-    border-radius: 4px;
+::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3; /* Light gray scrollbar thumb */
+    border-radius: 4px; /* Optional: rounded corners */
 }
 
-.navbar::-webkit-scrollbar-track {
-    background-color: #222;
+::-webkit-scrollbar-track {
+    background-color: #222; /* Background of the scrollbar track */
 }
 
-.navbar {
-    scrollbar-width: thin;
-    scrollbar-color: #d3d3d3 #222;
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #d3d3d3 #222; /* Light gray thumb and dark track */
 }
 
 
@@ -234,15 +237,17 @@ body.light-mode .tab-name {
 }
 
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    height: 120px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    padding: 10px; /* Optional: padding */
 }
 
 .contact-item {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
+    /* Ensure items are flexible and align as needed */
 }
 
 .contact-service {
@@ -272,15 +277,17 @@ body.light-mode .contact-name a {
 }
 
 .social-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    height: 120px; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    padding: 10px; /* Optional: padding */
 }
 
 .social-item {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
+    /* Ensure items are flexible and align as needed */
 }
 
 .social-service {
@@ -308,6 +315,7 @@ body.light-mode .social-name a {
 .social-name a:hover {
     text-decoration: underline;
 }
+
 
 
 
