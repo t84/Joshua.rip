@@ -31,6 +31,9 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 40px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-color: #d3d3d3 #222;
 }
 
 .tab-name {
@@ -42,6 +45,9 @@ body {
 .tabs {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
 .tabs li {
@@ -64,6 +70,26 @@ body {
     bottom: 10px;
     right: 10px;
 }
+
+.navbar::-webkit-scrollbar {
+    height: 8px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: 4px;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background-color: #222;
+}
+
+.navbar {
+    scrollbar-width: thin;
+    scrollbar-color: #d3d3d3 #222;
+}
+
+
 
 #theme-toggle {
     background-color: #444;
