@@ -151,16 +151,50 @@ body {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: pulse 2s infinite;
 }
 
 .status-online {
     background-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
 }
 
 .status-offline {
     background-color: #f44336;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px #3a883c;
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes pulse-offline {
+    0% {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px #ce362b;
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.status-online {
+    animation: pulse 3s infinite;
+}
+
+.status-offline {
+    animation: pulse-offline 3s infinite;
 }
 
 .info-box {
@@ -297,12 +331,6 @@ body.light-mode .social-name a {
 .social-name a:hover {
     text-decoration: underline;
 }
-
-
-
-
-
-
 
 @media (min-width: 768px) {
     .social-info {
