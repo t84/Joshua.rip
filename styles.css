@@ -285,17 +285,18 @@ body.light-mode .social-name a {
 
 
 
-.bottom-text {
-    position: absolute;
-    bottom: 10px; 
-    left: 10px; 
-    margin: 0; 
-    font-size: 14px; 
-    color: #f0f0f0; 
-}
+
 
 
 @media (min-width: 768px) {
+
+    .bottom-text {
+        position: absolute;
+        bottom: 10px; 
+        left: 10px; 
+        margin: 0; 
+        font-size: 14px; 
+    }
     
     .container {
         width: 564px;
@@ -322,5 +323,13 @@ body.light-mode .social-name a {
 
     .container.home-active {
         height: 350px;
+    }
+
+    .bottom-text {
+        position: absolute;
+        bottom: 10px; 
+        left: 10px; 
+        margin: 0; 
+        font-size: 8px; 
     }
 }
