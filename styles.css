@@ -1,36 +1,32 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #121212; /* Dark mode default background */
+    background-color: #121212;
 }
 
-/* Container for the main rectangle - default is mobile size */
 .container {
-    background-color: #1e1e1e; /* Dark mode container background */
+    background-color: #1e1e1e;
     width: 414px;
     height: 279px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for dark mode */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-/* Navbar styling */
 .navbar {
-    background-color: #222; /* Dark gray for navbar */
+    background-color: #222;
     padding: 10px;
-    border-bottom: 2px solid #666666; /* Slightly lighter gray border for visibility */
+    border-bottom: 2px solid #666666;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +34,7 @@ body {
 }
 
 .tab-name {
-    color: #f0f0f0; /* Off-white text for tab name */
+    color: #f0f0f0;
     font-size: 18px;
     font-weight: bold;
 }
@@ -53,17 +49,16 @@ body {
 }
 
 .tabs li a {
-    color: #f0f0f0; /* Off-white for links */
+    color: #f0f0f0;
     text-decoration: none;
     font-weight: bold;
 }
 
 .tabs li a:hover,
 .tabs li a.active {
-    color: #bbbbbb; /* Light gray hover and active effect */
+    color: #bbbbbb;
 }
 
-/* Theme toggle button */
 .toggle-container {
     position: absolute;
     bottom: 10px;
@@ -71,8 +66,8 @@ body {
 }
 
 #theme-toggle {
-    background-color: #444; /* Dark gray button */
-    color: #f0f0f0; /* Off-white text */
+    background-color: #444;
+    color: #f0f0f0;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
@@ -81,28 +76,27 @@ body {
 }
 
 #theme-toggle:hover {
-    background-color: #333333; /* Darker gray on hover */
+    background-color: #333333;
 }
 
-/* Content section styling */
 .content {
     padding: 15px;
     flex: 1;
     display: flex;
-    align-items: flex-start; /* Align items to the top of the container */
+    align-items: flex-start;
 }
 
 .profile-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 15px; /* Space between profile and content */
+    margin-right: 15px;
 }
 
 #home.active ~ .profile-info   {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align items in the profile info */
+    align-items: center;
 }
 
 .profile-status {
@@ -113,44 +107,42 @@ body {
 .profile-picture {
     width: 120px;
     height: 120px;
-    border-radius: 10px; /* Square corners */
-    background-color: #ddd; /* Placeholder color */
+    border-radius: 10px;
+    background-color: #ddd;
     background-size: cover;
     background-position: center;
-    margin-bottom: 10px; /* Space below profile picture */
+    margin-bottom: 10px;
 }
 
 .name.light-mode {
-    color: #4a4a4a; /* Off-white text color */
-    font-size: 14px; /* Adjust font size */
-    margin-left: 10px; /* Space between status indicator and name */
+    color: #4a4a4a;
+    font-size: 14px;
+    margin-left: 10px;
 }
 
 .status-indicator {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ccc; /* Default to gray (offline) */
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Soft shadow for effect */
+    background-color: #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Status colors */
 .status-online {
-    background-color: #4caf50; /* Green for online */
+    background-color: #4caf50;
 }
 
 .status-offline {
-    background-color: #f44336; /* Red for offline */
+    background-color: #f44336;
 }
 
 .info-box {
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Add vertical scroll if content overflows */
+    overflow-y: auto;
 }
 
-/* Tab content styling */
 .tab-content {
     display: none;
 }
@@ -159,7 +151,6 @@ body {
     display: block;
 }
 
-/* Only show profile-section on the Home tab */
 .home-page {
     display: none;
 }
@@ -168,58 +159,54 @@ body {
     display: flex;
 }
 
-/* Dark mode text color */
 body.dark-mode .content {
-    color: #f0f0f0; /* Off-white text for dark mode */
+    color: #f0f0f0;
 }
 
 body.dark-mode .tab-name {
-    color: #f0f0f0; /* Off-white text for tab name in dark mode */
+    color: #f0f0f0;
 }
 
-/* Light mode styling */
 body.light-mode {
-    background-color: #d3d3d3; /* Muted light gray background */
+    background-color: #d3d3d3;
 }
 
 body.light-mode .container {
-    background-color: #e0e0e0; /* Soft gray background for container */
-    color: #4a4a4a; /* Medium gray text */
+    background-color: #e0e0e0;
+    color: #4a4a4a;
 }
 
 body.light-mode .navbar {
-    background-color: #333333; /* Dark gray for navbar */
-    border-bottom: 2px solid #888888; /* Lighter gray border */
+    background-color: #333333;
+    border-bottom: 2px solid #888888;
 }
 
 body.light-mode .tabs li a {
-    color: #f0f0f0; /* Medium gray for links */
+    color: #f0f0f0;
 }
 
 body.light-mode .tabs li a:hover,
 body.light-mode .tabs li a.active {
-    color: #d3d3d3; /* Light gray color for hover and active effect */
+    color: #d3d3d3;
 }
 
 body.light-mode #theme-toggle {
-    background-color: #555555; /* Gray button */
-    color: #f0f0f0; /* Off-white text */
+    background-color: #555555;
+    color: #f0f0f0;
 }
 
 body.light-mode #theme-toggle:hover {
-    background-color: #333333; /* Darker gray on hover */
+    background-color: #333333;
 }
 
-/* Adjust content text color in light mode */
 body.light-mode .content {
-    color: #4a4a4a; /* Medium gray text for visibility */
+    color: #4a4a4a;
 }
 
 body.light-mode .tab-name {
-    color: #f0f0f0; /* Medium gray text for tab name in light mode */
+    color: #f0f0f0;
 }
 
-/* Contact info styling */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -229,7 +216,7 @@ body.light-mode .tab-name {
 .contact-item {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0; /* Add some space around the text */
+    padding: 5px 0;
 }
 
 .contact-service {
@@ -243,22 +230,21 @@ body.light-mode .tab-name {
 }
 
 .contact-name a {
-    text-decoration: none; /* Remove underline by default */
+    text-decoration: none;
 }
 
 body.dark-mode .contact-name a {
-    color: #ffffff; /* White for links in dark mode */
+    color: #ffffff;
 }
 
 body.light-mode .contact-name a {
-    color: #000000; /* Black for links in light mode */
+    color: #000000;
 }
 
 .contact-name a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
-/* Socials info styling */
 .social-info {
     display: flex;
     flex-direction: column;
@@ -268,7 +254,7 @@ body.light-mode .contact-name a {
 .social-item {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0; /* Add some space around the text */
+    padding: 5px 0;
 }
 
 .social-service {
@@ -282,22 +268,33 @@ body.light-mode .contact-name a {
 }
 
 .social-name a {
-    text-decoration: none; /* Remove underline by default */
+    text-decoration: none;
 }
 
 body.dark-mode .social-name a {
-    color: #ffffff; /* White for links in dark mode */
+    color: #ffffff;
 }
 
 body.light-mode .social-name a {
-    color: #000000; /* Black for links in light mode */
+    color: #000000;
 }
 
 .social-name a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
-/* Desktop size adjustments */
+
+
+.bottom-text {
+    position: absolute;
+    bottom: 10px; 
+    left: 10px; 
+    margin: 0; 
+    font-size: 14px; 
+    color: #f0f0f0; 
+}
+
+
 @media (min-width: 768px) {
     
     .container {
@@ -320,11 +317,10 @@ body.light-mode .social-name a {
 
 @media (max-width: 767px) {
     .container {
-        height: 400px; /* Default height for mobile */
+        height: 400px;
     }
 
-    /* When the Home tab is active, increase the height */
     .container.home-active {
-        height: 350px; /* Adjust this height as needed */
+        height: 350px;
     }
 }
