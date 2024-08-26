@@ -16,6 +16,7 @@
     if (isReducedMotion) {
       return;
     }
+
     
     try {
       const searchParams = location.search
@@ -146,7 +147,7 @@
       nekoEl.style.imageRendering = "pixelated";
       nekoEl.style.left = `${nekoPosX - 16}px`;
       nekoEl.style.top = `${nekoPosY - 16}px`;
-      nekoEl.style.zIndex = Number.MAX_VALUE;
+      nekoEl.style.zIndex = 9999;
   
       document.body.appendChild(nekoEl);
   
