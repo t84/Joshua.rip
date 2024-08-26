@@ -17,19 +17,6 @@
       return;
     }
 
-    // Hardcoded for privacy reasons.
-    const nekoSites = [
-      "adryd.com",
-      "localhost",
-      "c7.pm",
-      "fade.nya.rest",
-      "fleepy.tv",
-      "maia.crimew.gay",
-      "spookyghost.zone",
-      "noelle.df1.dev",
-      "kibty.town",
-      "www.kibty.town"
-    ];
     
     try {
       const searchParams = location.search
@@ -69,8 +56,6 @@
     } catch (e) {;
       return;
     }
-    if (!nekoSites.includes(newLocation.host) || newLocation.pathname != "/")
-      return;
     newLocation.searchParams.append("catx", Math.floor(nekoPosX));
     newLocation.searchParams.append("caty", Math.floor(nekoPosY));
     newLocation.searchParams.append("catdx", Math.floor(mousePosX));
