@@ -69,22 +69,53 @@ function setStatus(isOnline) {
 }
 
 async function fetchProfilePicture() {
+    const storageKey = 'profile-picture';
+    const urlKey = 'profile-picture-url';
+    const profilePicture = document.getElementById('profile-picture');
+    
+    const loadingGifUrl = 'assets/images/spinner.gif';
+    
+    const cachedImage = localStorage.getItem(storageKey);
+    const cachedUrl = localStorage.getItem(urlKey);
+    
+    profilePicture.style.backgroundImage = `url(${loadingGifUrl})`;
+    
     try {
         const response = await fetch('https://i.joshua.dog/api/discord/status');
         const data = await response.json();
         const pictureUrl = data.user.avatar_url;
-        profilePicture.style.backgroundImage = `url(${pictureUrl})`;
-
+        
+        if (cachedImage && cachedUrl === pictureUrl) {
+            profilePicture.style.backgroundImage = `url(${cachedImage})`;
+        } else {
+            const imageResponse = await fetch(pictureUrl);
+            const imageBlob = await imageResponse.blob();
+            
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                const base64data = reader.result;
+                
+                localStorage.setItem(storageKey, base64data);
+                localStorage.setItem(urlKey, pictureUrl);
+                
+                profilePicture.style.backgroundImage = `url(${base64data})`;
+            };
+            reader.readAsDataURL(imageBlob);
+        }
+        
         const status = data.status;
         if (status === 'Online') {
             setStatus(true);
         } else {
             setStatus(false);
         }
-
+        
     } catch (error) {
         console.error('Error fetching profile picture:', error);
     }
 }
 
 fetchProfilePicture();
+
+
+
