@@ -6,6 +6,7 @@
 
 body {
     font-family: 'IBM Plex Mono', monospace;
+    src: url('../fonts/IBM-Plex-Mono.woff2') format('woff2');
     display: flex;
     justify-content: center;
     align-items: center;
