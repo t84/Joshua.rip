@@ -118,4 +118,49 @@ async function fetchProfilePicture() {
 fetchProfilePicture();
 
 
+async function fetchBlogs() {
+    const blogContainer = document.querySelector('.blog-info');
+    
+    if (!blogContainer) {
+        console.error('Element with class "blog-info" not found.');
+        return;
+    }
+    
+    try {
+        const response = await fetch('https://blog.joshua.rip/feed.json');
+        const data = await response.json();
+        
+        const blogs = Array.isArray(data.items) ? data.items : [];
+        
+        blogContainer.innerHTML = '';
+        
+        if (blogs.length === 0) {
+            blogContainer.innerHTML = '<p>No blogs available.</p>';
+            return;
+        }
+
+        blogs.forEach(blog => {
+            const blogItem = document.createElement('div');
+            blogItem.className = 'blog-item';
+            
+            blogItem.innerHTML = `
+                <a href="${blog.url}" target="_self">
+                    <div class="blog-title">${blog.title}</div>
+                    <div class="blog-date">${blog.date_published}</div>
+                </a>
+            `;
+
+            blogContainer.appendChild(blogItem);
+        });
+
+        console.log(blogContainer)
+        
+    } catch (error) {
+        console.error('Error fetching blogs:', error);
+        blogContainer.innerHTML = '<p>Error loading blogs.</p>';
+    }
+}
+
+fetchBlogs();
+
 

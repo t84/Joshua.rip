@@ -333,6 +333,52 @@ body.light-mode .social-name a {
 }
 
 
+
+.blog-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.blog-item a {
+    display: flex;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+}
+.blog-item a:hover {
+    text-decoration: underline;
+}
+
+.blog-title {
+    flex: 1;
+    text-align: left;
+}
+
+.blog-date {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.blog-date a {
+    text-decoration: none;
+}
+
+body.dark-mode .blog-name a {
+    color: #ffffff;
+}
+
+body.light-mode .blog-name a {
+    color: #000000;
+}
+
+.blog-name a:hover {
+    text-decoration: underline;
+}
+
+
+
 @media (min-width: 768px) {
 
     .retro-info {
